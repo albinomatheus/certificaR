@@ -1,0 +1,46 @@
+---
+output: 
+  pdf_document:
+    keep_tex: false
+classoption: landscape    
+documentclass: article
+geometry: top=1.5cm, bottom=1.5cm, left=2cm, right=1cm
+header-includes:
+- \usepackage[pscoord]{eso-pic}
+- \usepackage{graphicx}
+- \usepackage{lipsum}
+- \usepackage{fancyhdr}
+- \usepackage[sfdefault,lf]{carlito}
+- \pagestyle{fancy}
+- \cfoot{}
+
+---
+
+\newcommand{\placetextbox}[3]{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \setbox0=\hbox{#3}% Put <stuff> in a box
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}
+  }
+}
+
+\phantom{text}
+\AddToShipoutPictureBG*{\includegraphics[width=2\paperwidth,height=\paperheight]{modelos/revista_anpg.png}}
+
+\placetextbox{0.5}{0.6}{
+\parbox{0.9\linewidth}{
+
+\vspace{-50pt}
+
+\begin{center}
+{\Huge \bfseries CERTIFICADO} 
+\end{center}
+
+\vspace{30pt}
+
+  \LARGE Certificamos que \textbf{`r dInscritos[i,'Autores']`} publicou o trabalho \textbf{`r dInscritos[i,'Tipo']`} na  edição XXXX, da Revista XXXXX, organizada pela XXXXX. 
+  
+  \vspace{30pt}
+  
+  São Paulo, 2 de julho de 2022. 
+}
+}
