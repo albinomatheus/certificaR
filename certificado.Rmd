@@ -37,7 +37,7 @@ header-includes:
 
 \vspace{30pt}
 
-  \LARGE Certificamos que \textbf{`r dInscritos[i,'Autores']`} publicou o trabalho \textbf{`r dInscritos[i,'Tipo']`} na  edição XXXX, da Revista XXXXX, organizada pela XXXXX. 
+  \LARGE Certificamos que \textbf{`r autores[i,'Autores']`} publicou o trabalho \textbf{`r autores[i,'Tipo']`} na  edição XXXX, da Revista XXXXX, organizada pela XXXXX. 
   
   \vspace{30pt}
   
